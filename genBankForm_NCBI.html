@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>NGFRF - NCBI GenBank File Retrieval Form</title>
+<script type="text/javascript">
+      function checkUncheckAll(oCheckbox) {
+	 var el, i = 0, bWhich = oCheckbox.checked, oForm = oCheckbox.form;
+	 while (el = oForm[i++])
+	    if (el.type == 'checkbox')
+	       el.checked = bWhich;
+      }
+   </script>
+    <style type='text/css'>
+    .c0  { font-family: arial, monospace; font-size: 10pt }
+    .c1  { font-family: arial, monospace; font-size: 16pt }
+    .boxed0 {border: 1px solid white; background-color: white;}
+    .boxed1 {border: 1px solid black; background-color: lightblue;}
+
+    </style>
+</head>
+<body onload="document.forms[0].reset( )">
+	<body style="background-color: #B0C4DE">
+<pre>
+<div class="boxed0">
+	<img src="https://i.imgur.com/j6dsZPN.png" alt="NCBI">
+</div>
+
+<div class="boxed1">
+<span class="c1">   NCBI GenBank File Retrieval Form (NGFRF)
+
+   Select Fields To Display...</span><span class='c0'>
+	<form method="post" action="cgi-bin/read_gen_form.pl">
+	<input type='checkbox' name='attributes' value='LOCUS'>LOCUS
+	<input type='checkbox' name='attributes' value='DEFINITION'>DEFINITION
+	<input type='checkbox' name='attributes' value='ACCESSION'>ACCESSION
+	<input type='checkbox' name='attributes' value='VERSION'>VERSION
+	<input type='checkbox' name='attributes' value='KEYWORDS'>KEYWORDS
+	<input type='checkbox' name='attributes' value='SOURCE'>SOURCE
+	<input type='checkbox' name='attributes' value='ORGANISM'>ORGANISM
+	<input type='checkbox' name='attributes' value='REFERENCE'>REFERENCE
+	<input type='checkbox' name='attributes' value='AUTHORS'>AUTHORS
+	<input type='checkbox' name='attributes' value='TITLE'>TITLE
+	<input type='checkbox' name='attributes' value='JOURNAL'>JOURNAL
+	<input type='checkbox' name='attributes' value='MEDLINE'>MEDLINE
+	<input type='checkbox' name='attributes' value='FEATURES'>FEATURES
+	<input type='checkbox' name='attributes' value='BASECOUNT'>BASE COUNT
+	<input type='checkbox' name='attributes' value='ORIGIN'>ORIGIN
+
+	<input type='checkbox' name='CHECKALL' onclick="checkUncheckAll(this)" /><strong>CHECK / UNCHECK All</strong>
+   </span>
+
+	<select name='viruses'>
+    	<option value='ftp://ftp.ncbi.nlm.nih.gov/genomes/Viruses/zaire_ebolavirus_uid14703/NC_002549.gbk'>Zaire ebola virus [accn] NC_002549
+    	<option value='ftp://ftp.ncbi.nlm.nih.gov/genomes/Viruses/human_orthopneumovirus_uid15003/NC_001781.gbk'>Human respiratory syncytial virus [accn] NC_001781
+	    <option value='ftp://ftp.ncbi.nlm.nih.gov/genomes/Viruses/african_green_monkey_polyomavirus_uid15320/NC_004763.gbk'>African green monkey polyomavirus [accn] NC_004763
+	    <option value='ftp://ftp.ncbi.nlm.nih.gov/genomes/Viruses/staphylococcus_phage_p68_uid14269/NC_004679.gbk'>Staphylococcus aureus phage [accn] NC_004679
+	    <option value='ftp://ftp.ncbi.nlm.nih.gov/genomes/Viruses/yersinia_phage_phia1122_uid14332/NC_004777.gbk'>Yesrsinia pestis phage [accn] NC_004777
+	</select>
+
+	To receive a copy of the retrieved information, please enter your E-mail @myseneca.ca address below.
+
+	Email: <input name='mailto' type='text' size='30'><br />
+	<input type='submit' value='Process'> <input type='reset'>
+</div>
+</pre>
+</form>
+</body>
+</html>
